@@ -1,0 +1,16 @@
+<h1> Usuários </h1>
+<ul>
+	<!-- Iterate over object_list -->
+	{% for data in dataset %}
+	<!-- Display Objects -->
+    ID: {{data.id}}<br>
+	Nome: {{ data.nome }} {{data.sobrenome}}<br>
+    Nome de usuário: {{ data.username }}<br>
+    CPF: {{ data.cpf }}
+
+	<hr/>
+	<!-- If object_list is empty -->
+	{% empty %}
+	<li>Não há usuários cadastrados.</li>
+	{% endfor %}
+</ul>
