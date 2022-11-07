@@ -3,7 +3,7 @@
     <form method="POST">
         <!-- Security token by Django -->
         {% csrf_token %}
-        Deseja remover o usuário?
+        Deseja remover o usuário {{ data.username }}?
         <input type="submit" value="Yes" />
         <a href="/">Cancel </a>
     </form>

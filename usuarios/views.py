@@ -7,7 +7,7 @@ def cadastro_usuario(request):
     if request.method == 'POST':
         cadastro_form = CadastroUsuarioForm(request.POST)
         if cadastro_form.is_valid():
-            usuario = cadastro_form.save()
+            usuario = cadastro_form.create()
             usuario = authenticate(email = usuario.email, senha=cadastro_form.cleaned_data['senha1'])
             login(request, usuario)
             return redirect('')
@@ -46,6 +46,7 @@ def atualizar_usuario(request, id):
 def remover_usuario(request, id):
     context = {}
     usuario = get_object_or_404(Usuario, id=id)
+    context["data"] = get_object_or_404(Usuario, id=id)
 
     if request.method == "POST":
         usuario.delete()
