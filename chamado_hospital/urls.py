@@ -31,5 +31,6 @@ urlpatterns = [
     path('setores/<pk>/atualizar', SetorUpdateView.as_view()),
     path('setores/<pk>/apagar', SetorDeleteView.as_view()),
     path('chamados/', include('chamados.urls')),
-    path('usuarios/',include('usuarios.urls'))
+    #path('usuarios/', include('django.contrib.auth.urls')),
+    path('usuarios/',include('usuarios.urls')),
 ]

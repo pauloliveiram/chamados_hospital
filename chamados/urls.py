@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import ChamadoCadastroView, ChamadoListView, ChamadoDetailView, ChamadoUpdateView, ChamadoDeleteView
+from .views import cadastro_chamado, list_chamados, update_chamado, delete_chamado, chamado_view
 
 urlpatterns = [
-    path('cadastro', ChamadoCadastroView.as_view()),
-    path('', ChamadoListView.as_view()),
-    path('<pk>', ChamadoDetailView.as_view()),
-    path('<pk>/atualizar', ChamadoUpdateView.as_view()),
-    path('<pk>/apagar', ChamadoDeleteView.as_view()),
+    path('cadastro', cadastro_chamado, name='cadastro_chamado'),
+    path('', list_chamados, name='list_chamados'),
+    path('<pk>', chamado_view, name='chamado_view'),
+    path('<id>/atualizar', update_chamado, name='update_chamado'),
+    path('<pk>/apagar', delete_chamado, name='delete_chamado'),
 ]

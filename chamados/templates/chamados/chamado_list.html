@@ -1,10 +1,10 @@
 <h1> Chamados </h1>
 <ul>
 	<!-- Iterate over object_list -->
-	{% for object in object_list %}
+	{% for chamado in dataset %}
 	<!-- Display Objects -->
-	<li>{{ object.id }}</li>
-    <li>{{ object.problema }}</li>
+	<li>{{ chamado.id }}</li>
+    <li>{{ chamado.problema }}</li>
 
 	<hr/>
 	<!-- If object_list is empty -->

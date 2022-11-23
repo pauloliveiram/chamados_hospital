@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import AuthenticationForm
 from .models import Usuario
 
 class UsuarioForm(forms.ModelForm):
@@ -60,4 +60,10 @@ class AtualizarUsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = ['nome', 'sobrenome', 'email', 'cpf', 'telefone', 'data_nascimento', 'tipo_profissional']
+
+class LoginUsuarioForm(AuthenticationForm):
+
+    username = forms.CharField(label="", widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Nome de Usuário', 'required': 'required'}))
+    password = forms.CharField(label="", strip=False, widget=forms.PasswordInput(attrs={'type': 'password', 'placeholder': 'Senha','required': 'required'}))
+    
       
