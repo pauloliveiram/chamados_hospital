@@ -33,7 +33,7 @@ def cadastro_chamado(request):
 
     return render(request, 'chamados/chamado_form.html', context)    
 
-@has_role_decorator(['coordenador'])
+#@has_role_decorator(['coordenador'])
 def list_chamados(request):
 
     context = {}

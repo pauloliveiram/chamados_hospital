@@ -85,7 +85,7 @@ def login_usuario(request):
 
             if usuario is not None:
                 login(request, usuario)
-                return redirect('lista_usuarios')
+                return redirect('inicio_coordenador', username=username)
 
         else:
             login_form = LoginUsuarioForm()
@@ -98,4 +98,9 @@ def login_usuario(request):
 
 def logout_usuario(request):
     logout(request)
-    return redirect('login_usuario')                                 
+    return redirect('login_usuario')
+    
+def inicio_coordenador(request, username):
+    context = {}
+    context["data"] = Usuario.objects.get(username=username)
+    return render(request, 'tela_inicial_coordenador.html', context)                              

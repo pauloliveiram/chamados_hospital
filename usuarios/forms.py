@@ -63,7 +63,7 @@ class AtualizarUsuarioForm(forms.ModelForm):
 
 class LoginUsuarioForm(AuthenticationForm):
 
-    username = forms.CharField(label="", widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Nome de Usuário', 'required': 'required'}))
-    password = forms.CharField(label="", strip=False, widget=forms.PasswordInput(attrs={'type': 'password', 'placeholder': 'Senha','required': 'required'}))
+    username = forms.CharField(label="Nome de usuário", widget=forms.TextInput(attrs={'type': 'text', 'class': 'form-control', 'required': 'required'}))
+    password = forms.CharField(label="Senha", strip=False, widget=forms.PasswordInput(attrs={'type': 'password', 'class': 'form-control', 'id': 'exampleInputPassword1','required': 'required'}))
     
       

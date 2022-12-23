@@ -1,0 +1,16 @@
+nav {
+    background-color: #e9ecef;
+}
+
+form {
+    margin: 120px 385px;
+    heigth: 85%;
+    width: 45%;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #e9ecef;
+}
+
+button {
+    width: 100%;
+}
